@@ -69,6 +69,17 @@ Style Reset
         margin-bottom: 3rem;
     }
 
+/*
+Style largeur maximum
+*/
+    nav ul, #portfolio, #aboutMe p, #contacts, footer section{
+        /* Définir une largeur maximum */
+        max-width: 95rem;
+
+        /* Centrer une balise de type block dans son parent */
+        margin: auto;
+    }
+
 
 /*
 Style header
