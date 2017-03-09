@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>9 Mars - Mon premier site</title>
+
+        <!-- Ajouter la feuille de style CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
     </head>
     <body>
 
@@ -76,6 +80,32 @@
             <section>
 
                 <h2>Contact me</h2>
+
+                <!-- Création d'un formulaire -->
+                <form action="#">
+
+                    <!-- Ajouter un champs pour le nom -->
+                    <!-- Placeholder permet d'afficher un message dans le input -->
+                    <input type="text" placeholder="Name"> 
+
+                    <!-- Ajouter un champs pour le email -->
+                    <input type="email" placeholder="Email">
+
+                    <!-- Ajouter un champ pour le numéro de téléphone -->
+                    <input type="text" placeholder="Telephone">
+
+                    <!-- Ajouter un champ pour le message -->
+                    <textarea placeholder="Message"></textarea>
+
+                    <!--
+                        Terminer le formulaire par un input de type submit
+                        pour pouvoir le valider.
+                        L'attribut value permet de modifier le texte d'un input
+                        de type submit (comme le placeholder pour les autres inputs).
+                    -->
+                    <input type="submit" value="Send">
+
+                </form>
 
             </section>
 
