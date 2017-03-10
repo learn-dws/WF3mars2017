@@ -1,5 +1,6 @@
 /* Importer un fichier CSS */
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900|Ultra');
 
 /*
 Style Reset
@@ -19,7 +20,7 @@ Style Reset
         font-size: 1.5rem; /* => 15px */
 
         /* Changer la famille de caractères */
-        font-family: "Arial", sans-serif;
+        font-family: 'Raleway', sans-serif;
     }
 
     /* Supprimer la décoration des balises A */
@@ -34,6 +35,15 @@ Style Reset
 
     section{
         padding: 6rem 0;
+    }
+
+    h1, h2, h3{
+
+        /* Changer la famille de caractères */
+        font-family: 'Ultra', serif;
+
+        font-weight: 400;
+    
     }
 
     h1{
@@ -75,7 +85,12 @@ Style Reset
 /*
 Style largeur maximum
 */
-    nav ul, #portfolio, #aboutMe p, #contacts, footer section{
+    nav ul, 
+    main section:first-child, 
+    main section:nth-child(2) p, 
+    main section:last-child, 
+    footer section{
+        
         /* Définir une largeur maximum */
         max-width: 95rem;
 
@@ -141,7 +156,8 @@ Style header
 
     }
 
-    #firstNavLi{
+    /* Sélectionner le premier enfant */
+    nav li:first-child {
 
         /* Sortir la balise du flux pour la repositionner précisément */
         position: absolute;
@@ -163,12 +179,12 @@ Style header
 /*
 Style portfolio
 */
-    #portfolio{
+    main section:first-child{
         /* Centrer dans la largeur tous les éléments in-line */
         text-align: center;
     }
 
-    #portfolio article{
+    main section:first-child article{
 
         /* Ajouter une marge extérieure de 10px */
         margin: 1rem;
@@ -181,7 +197,7 @@ Style portfolio
         position: relative;
     }
 
-    #portfolio a {
+    main section:first-child a {
         font-size: 8rem;
         background: rgba(24, 188, 156, .7);
         color: white;
@@ -206,7 +222,7 @@ Style portfolio
     }
 
     /* Modifier l'opacité de la balise en hover */
-    #portfolio a:hover{
+    main section:first-child a:hover{
         opacity: 1;
     }
 
@@ -214,7 +230,8 @@ Style portfolio
 /*
 Style About Me
 */
-    #aboutMe{
+    /* Sélectionner le N-ème (nth) enfant */
+    main section:nth-child(2){
         /* Modifier la couleur des textes */
         color: snow;
 
@@ -225,7 +242,7 @@ Style About Me
         text-align: center;
     }
 
-    #aboutMe p{
+    main section:nth-child(2) p{
         /* Afficher le texte sur deux colonnes en CSS3 */
         -webkit-column-count: 2; /* Chrome, Safari, Opera */
         -moz-column-count: 2; /* Firefox */
@@ -237,7 +254,7 @@ Style About Me
         margin-bottom: 4rem;
     }
 
-    #aboutMe a {
+    main section:nth-child(2) a {
         color: snow;
         border: .3rem solid snow;
         padding: 1rem 1.5rem;
