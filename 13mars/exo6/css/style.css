@@ -55,6 +55,9 @@ Style Reset
 
         /* Ajouter une marge intérieure en haut de 30px */
         padding-top: 3rem;
+
+        /* Bloquer les enfants dans le parent */
+        position: relative;
     }
 
 
@@ -79,6 +82,38 @@ Style Reset
 
         /* Ajouter de la couleur */
         background: white;
+    }
+
+    h1:before {
+        content: "";
+        display: block;
+        width: 4rem;
+        height: 4rem;
+
+        /* Centrer une balise de type block réduite en largeur */
+        margin: auto;
+
+        /* Ajouter une image de fond */
+        background-image: url(../img/star-xxl.png);
+
+        /* Bloquer la répétition de l'image de fond */
+        background-repeat: no-repeat;
+
+        /* Modifier la taille de l'image de fond */
+        background-size: 100%;
+
+        /* Changer la couleur de fond */
+        background-color: #18bc9c;
+
+        border: 1rem solid #18bc9c;
+
+        /* Positionner la balise */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -60%);
+        transform: translate(-50%, -60%);
     }
 
 
