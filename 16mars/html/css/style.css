@@ -40,14 +40,7 @@ Style Reset
         padding: 0 2rem;
     }
 
-    h1:after, h2:after {
-        content: "";
-        display: block;
-        width: 6rem;
-        height: .2rem;
-        background: #F05F40;
-        margin: 2rem auto;
-    }
+    
 
     h3{
         font-size: 2rem;
@@ -103,7 +96,6 @@ Style Header
     nav ul {
         display: none;
     }
-
 
     nav > a{
         position: absolute;
