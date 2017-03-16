@@ -1,0 +1,111 @@
+/* Importer FontAwesome */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/* Importer les polices */
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,700');
+
+/*
+Style Reset
+*/
+    *{
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer les padding et les border dans les largeurs */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* Ramener la valeur de 1rem à 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+        font-family: 'Merriweather', serif;
+        text-align: center;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    h1 {
+        font-weight: 700;
+        line-height: 1em;
+        text-transform: uppercase;
+        padding: 0 2rem;
+    }
+
+    h1:after, h2:after {
+        content: "";
+        display: block;
+        width: 6rem;
+        height: .2rem;
+        background: #F05F40;
+        margin: 2rem auto;
+    }
+
+    h3{
+        font-size: 2rem;
+        margin: 2rem auto 1rem auto;
+    }
+
+    a, figcaption{
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    header > a, main a{
+        font-size: 1.2rem;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        
+        -webkit-border-radius: 2rem;
+        border-radius: 2rem;
+
+    }
+
+
+/*
+Style Header
+*/
+    header {
+        background-image: url(../img/header.jpg);
+        background-position: center;
+        background-size: cover;
+        padding: 16rem 2rem 10rem 2rem;
+        color: white;
+    }
+
+    nav{
+        color: #222;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        text-align: right;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+
+    nav > a{
+        position: absolute;
+        left: 2rem;
+    }
