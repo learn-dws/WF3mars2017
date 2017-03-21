@@ -1,1 +1,71 @@
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Suez+One');
+
+/*
+Style Reset
+*/
+    *{
+
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer le padding et le border dans la taille des boites */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+
+    }
+
+    /* Configurer l'utilisation de 1rem = 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        text-align: center;
+        font-size: 1.5rem; /* => 15px */
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h1{
+        font-size: 3rem;
+        font-weight: 400;
+        font-family: 'Suez One', serif;
+    }
+
+    h1 span{
+        font-family: 'Roboto', sans-serif;
+        font-size: .5em; /* => la moitier de h1 */
+        display: block;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+
+/*
+Style Header
+*/
+    header{
+        color: white;
+        background-color: #22175b;
+        padding: 2rem;
+    }
+
+    nav{
+        display: none;
+    }
+
+    header > a{
+        /* La balise A qui est enfant direct du header */
+        background: white;
+        width: 3rem;
+        height: 3rem;
+        padding-top: .7rem;
+        display: inline-block;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
