@@ -145,16 +145,10 @@ Style main
         padding: 4rem 2rem;
     }
 
-    article a{
-        display: none;
-    }
-
-
 
     /* Style Portfolio */
         figure{
             position: relative;
-            margin: 2rem auto;
         }
 
         figure:after {
@@ -187,10 +181,38 @@ Style main
             display: block;
         }
 
+        .portfolioPage article{
+            position: relative;
+            margin: 2rem auto;
+
+            /* Masquer les éléments qui dépassent de la balise */
+            overflow: hidden;
+
+        }
+
+        .portfolioPage main a{
+            color: white;
+            background: #22175b;
+            padding: .5rem 1rem;
+            
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            z-index: 1;
+
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        /* Changer la propriété top de la balise A au survol de l'article */
+        .portfolioPage article:hover a{
+            top: 40%;
+        }
 
 
 
-/*
+
+/*    
 Style footer
 */
     footer {
