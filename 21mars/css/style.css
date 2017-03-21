@@ -32,16 +32,25 @@ Style Reset
         font-size: 3rem;
         font-weight: 400;
         font-family: 'Suez One', serif;
+        padding-bottom: 2rem;
     }
 
     h1 span{
         font-family: 'Roboto', sans-serif;
-        font-size: .5em; /* => la moitier de h1 */
+        font-size: .5em; /* => la moitié de h1 */
         display: block;
     }
 
-    a{
+    a, header li{
         text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    /* Supprimer le style des listes */
+    ul{
+        list-style: none;
     }
 
 
@@ -52,20 +61,88 @@ Style Header
         color: white;
         background-color: #22175b;
         padding: 2rem;
+
+        /* Bloquer les enfant dans le parent */
+        position: relative;
     }
 
     nav{
-        display: none;
+        /*display: none;*/
     }
 
     header > a{
         /* La balise A qui est enfant direct du header */
+        font-size: 1.9rem;
+        color: #22175b;
         background: white;
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
         padding-top: .7rem;
+        border: .2rem solid #22175b;
         display: inline-block;
 
-        -webkit-border-radius: 50%;
+        /* Positionner précisemment la balise */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        -webkit-border-radius: 50%;  
         border-radius: 50%;
+    }
+
+    header > a:hover{
+        color: white;
+        background: #22175b;
+        border-color: white;
+    }
+
+    /* Afficher la nav au survol de la balise a du header */
+    header > a:hover + nav {
+        display: block;
+    }
+
+    header li{
+        font-weight: 700;
+        background: rgba(255, 255, 255, .5);
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    header li:hover{
+        background: white;
+    }
+
+    header li:hover a{
+        color: #22175b;
+    }
+
+    nav a{
+        color: white;
+    }
+
+
+/*
+Style footer
+*/
+    footer {
+        color: white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #22175b;
+        padding: 2rem;
+    }
+
+    footer a {
+        color: white;
+    }
+
+    /* Toutes les balises li du footer sauf la dernière */
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom: 1rem;
     }
