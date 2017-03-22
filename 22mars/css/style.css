@@ -219,4 +219,8 @@ Ecran d'une taille minimale de 850px
             top: -0.5rem;
         }
 
+        h2 span {
+            display: inline-block;
+        }
+
     }
