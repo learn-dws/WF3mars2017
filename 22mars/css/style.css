@@ -89,6 +89,7 @@ Style Main
 
     section {
         margin-bottom: 5rem;
+        clear: both;
     }
 
     /* Sélectionner la balise IMG qui suit directement la balise H1 */
@@ -108,7 +109,7 @@ Style Main
 
     figcaption{
         position: absolute;
-        bottom: 0;
+        bottom: 0;  
         left: 0;
         width: 100%;
         padding: 1rem;
@@ -116,4 +117,106 @@ Style Main
         background: rgba(255, 255, 255, .7)
     }
 
-    
+
+    textarea, input:not([type="submit"]){
+        display: block;
+        width: 100%;
+        border: none;
+        background: #eee;
+        padding: 1rem 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    [type="submit"]{
+        border: none;
+        background: #0b0b2d;
+        padding: 1rem 1.5rem;
+        color: white;
+        margin-bottom: 2rem;
+    }
+
+    textarea{
+        min-height: 20rem;
+    }
+
+    iframe {
+        border: none;
+        width: 100%;
+        min-height: 30rem;
+    }
+
+
+
+/*
+Style Footer
+*/
+    footer{
+        color: white;
+        background: #0b0b2d;
+        padding: 2rem;
+    }
+
+        
+
+/*
+Requête média
+Ecran d'une taille minimale de 850px
+*/
+    @media screen and (min-width:850px){
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        main, ul{
+            max-width: 85rem;
+            margin: auto;
+        }
+
+        main{
+            padding: 4rem 0;
+        }
+
+        li:first-child{
+            display: inline-block;
+            position: absolute;
+        }
+
+        nav ul {
+            text-align: right;
+            position: relative;
+        }
+
+        nav li:first-child {
+            left: 0;
+            top: -.8rem;
+            margin: 0;
+        }
+
+        section:nth-child(2) p, form, iframe{
+            display: inline-block;
+            vertical-align: top;
+            width: 49%;
+            margin-right: .5rem;
+        }
+
+        section:last-child p{
+            margin-bottom: 1rem;
+        }
+
+        figure {
+            display: inline-block;
+            width: 24%;
+            margin-right: .5rem;
+        }
+
+        footer ul{
+            position: relative;
+        }
+
+        footer li:first-child{
+            right: 0;
+            top: -0.5rem;
+        }
+
+    }
