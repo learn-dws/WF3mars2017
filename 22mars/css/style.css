@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700|Roboto');
+
+/*
+Style Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400; 
+    }
+
+    h1, h2, li:first-child{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1em;
+        color: #0b0b2d;
+        margin-bottom: 2rem;
+    }
+
+    h2{
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 span{
+        padding: 1rem 1.5rem;
+        background-color: #0b0b2d;
+        display: block;
+    }
+
+    li{
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    
+
+/*
+Style header
+*/
+    header{
+        color: white;
+        padding: 2rem;
+        background-image: url(../img/back.jpg);
+        background-size: cover;
+    }
+
+    li:first-child{
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+/*
+Style Main
+*/
+    main{
+        padding: 2rem;
+    }
+
+    section {
+        margin-bottom: 5rem;
+    }
+
+    /* Sélectionner la balise IMG qui suit directement la balise H1 */
+    h1 + img{
+        width: 10rem;
+        float: left;
+        margin-right: 1.5rem;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    
