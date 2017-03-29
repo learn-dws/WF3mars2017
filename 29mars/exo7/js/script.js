@@ -5,13 +5,17 @@
     - l'ordinateur doit choisir entre pierre, feuille et ciseaux
     - nous comparons le choix de l'utilisateur et de l'ordinateur
     - selon le résultat, l'utilisateur a gagné ou l'ordinateur a gagner
-    - une partie se joue en 3 manches
+    - une partie se joue en 3 manches gagnantes
 
 */
 
 
 // Variable globale pour le choix de l'utilisateur
 var userBet = '';
+var userWin = 0;
+var computerWin = 0;
+
+
 
 
 /*
@@ -38,18 +42,10 @@ function userChoice( paramChoice ){
 
 function computerChoice(){
 
-    // Afficher dans la console la valeur de userBet
-    console.log( 'user : ' + userBet );
-
     var computerMemory = [ 'pierre', 'feuille', 'ciseaux' ];
 
     // Choisir aléatoirement l'un de 3 index du tableau
-    var computerBet = computerMemory[Math.floor(Math.random() * computerMemory.length)];
-    console.log( 'Computer : ' + computerBet );
-
-
-
-    
+    var computerBet = computerMemory[Math.floor(Math.random() * computerMemory.length)];    
 
 
     // Vérifier si userBet est vide
@@ -68,16 +64,40 @@ function computerChoice(){
         } else if( userBet == 'pierre' && computerBet == 'ciseaux' ){
             document.querySelector('p').textContent = 'Gagné';
 
+            // Incrémenter la variable userWin de 1
+            userWin++;
+
         } else if( userBet == 'feuille' && computerBet == 'pierre' ){
             document.querySelector('p').textContent = 'Gagné';
+
+            // Incrémenter la variable userWin de 1
+            userWin++;
 
         } else if( userBet == 'ciseaux' && computerBet == 'feuille' ){
             document.querySelector('p').textContent = 'Gagné';
 
+            // Incrémenter la variable userWin de 1
+            userWin++;
+
         } else{
             document.querySelector('p').textContent = 'Perdu...';
+
+            // Incrémenter la variable computerWin de 1
+            computerWin++;
         };
 
+    };
+
+    // Vérifier les valeurs de userWin et computerWin
+    if( userWin == 3 ){
+        // Afficher le message dans le body
+        document.querySelector('body').innerHTML = '<h1>Vous avez gagné !</h1><a href="index.html">Rejouer</a>';
+
+    };
+
+    if( computerWin == 3 ){
+        // Afficher le message dans le body
+        document.querySelector('body').innerHTML = '<h1>Vous avez perdu...</h1><a href="index.html">Rejouer</a>';
     };
 
 };
