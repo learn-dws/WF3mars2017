@@ -8,7 +8,7 @@ console.log( myTitle.textContent );
 myTitle.textContent = 'Le titre a changé';
 
 
-// Sélectionner la balise #myId
+// Sélectionner la balise #myId 
 var myId = document.querySelector('#myId');
 
 // Afficher le contenu HTML dans la console
