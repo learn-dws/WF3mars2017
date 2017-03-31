@@ -14,6 +14,13 @@ $(document).ready(function(){
         Contacts: 'Contactez-moi pour plus d\'informations'
     };
 
+    // Créer un objet pour le contenu des pages
+    var myContent = {
+        Accueil: '<h3>Contenu de la page Accueil</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, ut omnis. Impedit ipsum non minima, doloribus quia animi amet voluptate, quo quas dolore quis ipsam, ex natus ullam, debitis sed.</p>',
+        Portfolio: '<h3>Contenu de la page Portfolio</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, ut omnis. Impedit ipsum non minima, doloribus quia animi amet voluptate, quo quas dolore quis ipsam, ex natus ullam, debitis sed.</p>',
+        Contacts: '<h3>Contenu de la page Contacts</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, ut omnis. Impedit ipsum non minima, doloribus quia animi amet voluptate, quo quas dolore quis ipsam, ex natus ullam, debitis sed.</p>'
+    }
+
     // Sélectionner le header et le mettre dans une variable
     var myHeader = $('header');
 
@@ -21,7 +28,7 @@ $(document).ready(function(){
     myHeader.append('<h1>' + siteTitle + '</h1>');
 
     // Générer une balise nav + ul dans le header
-    myHeader.append('<nav><ul></ul></nav>');
+    myHeader.append('<nav><i class="fa fa-bars" aria-hidden="true"></i><ul></ul></nav>');
 
     // Faire une boucle for(){...} sur myNav pour générer les liens de la nav
     for( var i = 0; i < myNav.length; i++ ){
@@ -34,6 +41,7 @@ $(document).ready(function(){
     // Afficher dans le main le titre issu de l'objet myTitles
     var myMain = $('main');
     myMain.append( '<h2>' + myTitles.Accueil + '</h2>' );
+    myMain.append( '<section>' + myContent.Accueil + '</section>' );
 
 
     // Capter l'événement click sur les balises a en bloquant le comportement naturel des balise a
@@ -43,30 +51,35 @@ $(document).ready(function(){
         evt.preventDefault();
 
         // Connaitre l'occurence de la balise a sur laquelle l'utilisateur à cliqué
-        console.log( $(this) );
+        // console.log( $(this) );
 
         // Récupérer la valeur de l'attribut href
-        console.log( $(this).attr('href') );
+        // console.log( $(this).attr('href') );
 
         // Vérifier la valeur de l'attribut href pour afficher le bon titre
         if( $(this).attr('href') == 'Accueil' ){
-            // Sélectionner la balise h2 pour changer son contenu
+            // Sélectionner la balise h2 pour changer son contenu texte
             $('h2').text( myTitles.Accueil );
 
+            // Sélectionner la section pour changer le contenu html
+            $('section').html( myContent.Accueil );
+
         } else if( $(this).attr('href') == 'Portfolio' ){
-            // Sélectionner la balise h2 pour changer son contenu
+            // Sélectionner la balise h2 pour changer son contenu texte
             $('h2').text( myTitles.Portfolio );
 
+            // Sélectionner la section pour changer le contenu html
+            $('section').html( myContent.Portfolio );
+
         } else{
-            // Sélectionner la balise h2 pour changer son contenu
+            // Sélectionner la balise h2 pour changer son contenu texte
             $('h2').text( myTitles.Contacts );
+
+            // Sélectionner la section pour changer le contenu html
+            $('section').html( myContent.Contacts );
         };
 
     } );
-
-
-    
-
 
 
 }); // Fin de la fonction de chargement du DOM
