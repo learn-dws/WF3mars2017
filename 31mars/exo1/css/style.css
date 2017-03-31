@@ -33,6 +33,9 @@ Style Reset
 /*
 Style header
 */
+    
+
+
     header, footer{
         color: white;
         background: salmon;
@@ -56,8 +59,8 @@ Style header
         -webkit-border-radius: 50%;
         border-radius: 50%;
 
-        -webkit-transform: translate(-50%, 50%);
-        transform: translate(-50%, 50%);
+        -webkit-transform: translate(-50%, 100%);
+        transform: translate(-50%, 100%);
     }
 
     h1 span{
@@ -69,8 +72,45 @@ Style header
     }
 
     nav ul{
-        display: none;
+        height: 0;
+        overflow: hidden;
+        list-style: none;
+
+        -webkit-transition: all 1s;
+        transition: all 1s;
     }
+
+    .toggleBurger{
+        height: 15rem;
+    }
+
+    nav a{
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    nav li{
+        background: rgba(255, 255, 255, .5);
+        padding: 1rem;
+        margin-bottom: .5rem;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .active{
+        background: white;
+    }
+
+    .active a{
+        color: salmon;
+    }
+
+
 
 
 /*
@@ -93,6 +133,11 @@ Style main
         margin-bottom: 1rem;
     }
 
+    main, h1, nav{
+        max-width: 85rem;
+        margin: auto;
+        position: relative;
+    }
 
 
 
@@ -105,4 +150,38 @@ Style footer
         left: 0;
         width: 100%;
         margin-bottom: 0;
+    }
+
+
+
+
+/*
+Requête media
+*/
+    @media screen and (min-width: 850px){
+
+        /* Style header */
+        header{
+            text-align: left;
+        }
+
+        .fa-bars{
+            display: none;
+        }
+
+        nav ul {
+            height: auto;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        nav li{
+            display: inline-block;
+        }
+
+        nav li:not(:last-child){
+            margin-right: .5rem;
+        }
+
     }
