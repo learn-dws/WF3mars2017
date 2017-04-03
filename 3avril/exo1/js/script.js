@@ -4,25 +4,26 @@ $(document).ready(function(){
     // Vérifier le genre de l'avatar
         var avatarWoman = $('#avatarWoman');
         var avatarMan = $('#avatarMan');
+        var avatarGender;
         
         // => avatarWoman capter le click
         avatarWoman.click(function(){
 
-            console.log( 'Je suis une ' + avatarWoman.val() );
-            
             // Désactiver avatarMan 
             avatarMan.prop('checked', false);
-
+            
+            // Modifier la valeur de avatarGender
+            avatarGender = avatarWoman.val();  
         });
 
         // => avatarMan capter le click
         avatarMan.click(function(){
 
-            console.log( 'Je suis un ' + avatarMan.val() );
-
             // Désactiver avatarWoman
             avatarWoman.prop('checked', false);
 
+            // Modifier la valeur de avatarGender
+            avatarGender = avatarMan.val(); 
         });
 
     
@@ -32,6 +33,9 @@ $(document).ready(function(){
 
         // Bloquer le comportement par defaut du formulaire
             evt.preventDefault();
+
+        // Définir une variable pour la validation finale du formulaire
+        var formScore = 0;
 
 
         // Variables globales du formulaire
@@ -48,6 +52,9 @@ $(document).ready(function(){
 
             } else{
                 console.log('avatarName OK');
+
+                // Incrémenter la variable formScore
+                formScore++;
             };
 
             // => avatarAge entre 1 et 100
@@ -56,6 +63,9 @@ $(document).ready(function(){
 
             } else{
                 console.log('avatarAge OK');
+
+                // Incrémenter la variable formScore
+                formScore++;
             };
 
 
@@ -65,6 +75,9 @@ $(document).ready(function(){
 
             } else{
                 console.log('avatarStyleTop OK');
+
+                // Incrémenter la variable formScore
+                formScore++;
             };
 
             // => avatarStyleBottom obligatoire
@@ -73,7 +86,26 @@ $(document).ready(function(){
 
             } else{
                 console.log('avatarStyleBottom OK');
+
+                // Incrémenter la variable formScore
+                formScore++;
             };
+
+
+            // => avatarGender vérifier la valeur
+            if( avatarGender == undefined ){
+                console.log('Vous devez choisir un genre');
+
+            } else{
+                console.log('avatarGender OK');
+
+                // Incrémenter la variable formScore
+                formScore++;
+            };
+
+
+            // Vérifier la valeur de la variable formScore
+            console.log(formScore);
 
     });
 
