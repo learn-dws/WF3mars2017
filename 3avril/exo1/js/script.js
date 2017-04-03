@@ -1,6 +1,10 @@
 // Attendre le chargement du DOM
 $(document).ready(function(){
 
+    // Créer un tableau vide pour enregistrer les avatars
+    var myTown = [];
+
+
     // Vérifier le genre de l'avatar
         var avatarWoman = $('#avatarWoman');
         var avatarMan = $('#avatarMan');
@@ -142,7 +146,6 @@ $(document).ready(function(){
 
         // Validation finale : vérifier la valeur de la variable formScore
             if( formScore == 5 ){
-                console.log('Le formulaire est validé !');
 
                 // => Envoyer les données du formulaire et attendre la réponse du server en Ajax
                 // => Le server répond true
@@ -157,6 +160,20 @@ $(document).ready(function(){
                         '</tr>'
                     );
 
+
+
+                    // Ajouter l'avatar dans le tableau JS
+                    myTown.push({
+                        name: avatarName,
+                        gender: avatarGender,
+                        age: parseInt(avatarAge),
+                        top: avatarStyleTop,
+                        bottom: avatarStyleBottom
+                    });
+
+
+
+
                     // Vider les champs du formulaire
                     $('form')[0].reset();
 
@@ -165,14 +182,39 @@ $(document).ready(function(){
                     $('#avatarTop').attr('src', 'img/top/null.png');
                     $('#avatarBottom').attr('src', 'img/bottom/null.png');
 
+                    // Afficher la taille totale de la ville dans #totalSims
+                    $('#totalSims').text( myTown.length );
+
+                    // Définir les variable globales pour les statistiques
+                    var totalGirls = 0;
+                    var totalBoys = 0;
+                    var totalAge = 0;
+
+                    // Faire une boucle for sur myTown pour connaître les statistiques
+                    for( var i = 0; i < myTown.length; i++ ){
+
+                        // Condition pour le gender
+                        if( myTown[i].gender == 'girl' ){
+                            totalGirls++;
+
+                        } else{
+                            totalBoys++;
+                        }
+
+                        // Additionner les ages
+                        totalAge += myTown[i].age;
+
+                    };
+
+                    // Afficher dans le tableau HTML le nombre de girls et le nombre de boys
+                    $('#simsWoman').html(totalGirls + '<b>/' + myTown.length + '</b>');
+                    $('#simsMan').html(totalBoys + '<b>/' + myTown.length + '</b>');
+
+                    // Afficher l'age moyen dans le tableau HTML
+                    var ageAmoutRounded = Math.round( totalAge / myTown.length  ) ;
+                    $('#simsAgeAmount').html( ageAmoutRounded + '<b>/ans</b>' );
+                    
             };
-
-            
-
     });
-
-
-
-
 
 }); // Fin de la fonction d'attente de chargement du DOM
