@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     });
 
-    // Fermer le Burger menu classique
+    // Fermer le Burger menu classique 
     $('a').click(function(evt){
 
         // Bloquer la balise a
