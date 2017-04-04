@@ -80,7 +80,16 @@ Style Header
         display: none;
     }
 
-    nav:hover{
+    .aboutPage nav {
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 20rem;
+        padding: 2rem;
+        background: #000000;
+
         display: block;
     }
 
@@ -111,11 +120,6 @@ Style Header
         color: white;
         background: #22175b;
         border-color: white;
-    }
-
-    /* Afficher la nav au survol de la balise a du header */
-    header > a:hover + nav {
-        display: block;
     }
 
     header li{
