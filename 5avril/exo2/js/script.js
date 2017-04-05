@@ -1,10 +1,28 @@
 // Attendre le chargement du DOM
 $(document).ready(function(){
 
-    // Créer une fonction pour l'animation des compétences
-    function mySkills(){
+    // Créer une fonction pour l'animation d'une compétence
+    function mySkills( paramEq, paramWidth ){
 
-        console.log( $('h3 + ul') );
+        // Animation des balise p des skils
+        $('h3 + ul').children('li').eq(paramEq).find('p').animate({
+            width: paramWidth
+        });
+        
+    };
+
+    // Créer une fonction pour ouvrir la modal
+    function openModal(){
+
+        // Ouvrir la modal au click sur les boutons
+        $('button').click(function(){
+            $('#modal').fadeIn();
+        });
+
+        // Fermer la modal au click sur .fa-times
+        $('.fa-times').click(function(){
+            $('#modal').fadeOut();
+        });
 
     };
 
@@ -47,12 +65,23 @@ $(document).ready(function(){
 
                     $('main').fadeIn(function(){
 
+
                         // Vérifier si l'utilisateur veut voir la page about.html
                         if( viewToLoad == 'about.html' ){
 
                             // Appler le fonction mySkills
-                            mySkills();
-                            
+                            mySkills( 0, '84%' );
+                            mySkills( 1, '25%' );
+                            mySkills( 2, '50%' );
+
+                        };
+
+                        // Vérifier si l'utilisateur est sur la page portfolio.html
+                        if( viewToLoad == 'portfolio.html' ){
+
+                            // Appeler la fonction pouur ouvrir la modal
+                            openModal();
+
                         };
 
                     });
@@ -62,11 +91,5 @@ $(document).ready(function(){
             });
 
         });
-
-
-
-     
-
-
 
 }); // Fin de la fonction d'attente de chargement du DOM
