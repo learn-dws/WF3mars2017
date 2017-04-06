@@ -312,6 +312,19 @@ Style main
             color: grey;
         }
 
+        form b {
+            font-size: .7em;
+            text-transform: uppercase;
+            color: red;
+
+            -webkit-transition: opacity .5s;
+            transition: opacity .5s;
+        }
+
+        .hideError b{
+            opacity: 0;
+        }
+
 
 
 
