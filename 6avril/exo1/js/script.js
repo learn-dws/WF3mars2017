@@ -17,14 +17,49 @@ $(document).ready(function(){
         // Ouvrir la modal au click sur les boutons
         $('button').click(function(){
 
-            console.log( $(this).prev().text() );
+            // Afficher le titre du projet
+            var modalTitle = $(this).prev().text()
+            $('#modal span').text( modalTitle );
 
+            // Afficher l'image du projet
+            var modalImage = $(this).parent().prev().attr('src');
+            $('#modal img').attr('src', modalImage).attr('alt', modalTitle)
+
+            // Afficher la modal
             $('#modal').fadeIn();
         });
 
         // Fermer la modal au click sur .fa-times
         $('.fa-times').click(function(){
             $('#modal').fadeOut();
+        });
+
+    };
+
+    // Créer une fonction pour la gestion du formulaire
+    function contactForm(){
+
+        // Capter le focus sur les inputs et le textarea
+        $('input, textarea').focus(function(){
+
+            // Sélection la balise précédente pour y ajouter la class openedLabel
+            $(this).prev().addClass('openedLabel');
+
+        });
+
+        // Capter le blur sur les inputs et le textarea
+        $('input, textarea').blur(function(){
+
+
+            // Vérifier si il n'y à pas de caractère dans le input
+            if( $(this).val().length == 0 ){
+
+                // Sélectionner la balise précédente pour supprimer la class openedLabel
+                $(this).prev().removeClass();
+
+            };
+
+            
         });
 
     };
@@ -83,6 +118,14 @@ $(document).ready(function(){
 
                             // Appeler la fonction pouur ouvrir la modal
                             openModal();
+
+                        };
+
+                        // Vérifier si l'utilisateur est sur la page contacts.html
+                        if( viewToLoad == 'contacts.html' ){
+
+                            // Déclencher la fonction de gestion du formulaire
+                            contactForm();
 
                         };
 
