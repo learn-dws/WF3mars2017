@@ -98,13 +98,14 @@ Header
         letter-spacing: .1rem;
     }
 
-    h1 + a{
+    h1 + a, [type="submit"]{
         font-size: 1rem;
         font-weight: 500;
         color: white;
         text-transform: uppercase;
         padding: 1rem 2rem;
         background-color: #f9ce4b;
+        border: none;
 
         -webkit-border-radius: .3rem;
         border-radius: .3rem;
@@ -139,4 +140,69 @@ Style Portfolio
         font-family: 'Merriweather', serif;
         color: grey;
         display: block;
+    }
+
+
+/*
+Style Contact
+*/
+    section:last-child{
+        color: white;
+        padding: 4rem 2rem;
+        background-image: url(../img/map-image.png);
+        background-color: #222;
+        background-size: cover;
+    }
+
+    input:not([type="submit"]), textarea, select{
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 1rem;
+        margin-bottom: 1rem;
+
+        -webkit-border-radius: .3rem;
+        border-radius: .3rem;
+    }
+
+    textarea{
+        min-height: 20rem
+    }
+
+
+/*
+Footer
+*/
+    footer{
+        font-size: 1.2rem;
+        padding: 2rem;
+    }
+
+    footer p:not(:last-child){
+        margin-bottom: 1rem;
+    }
+
+    footer p:last-child a{
+        color: #f9ce4b;
+    }
+
+    footer p:nth-child(2) a{
+        color: white;
+        width: 3rem;
+        height: 3rem;
+        background-color: black;
+        position: relative;
+        display: inline-block;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    footer .fa{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
